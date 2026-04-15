@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slay Bags | Luxury Boutique</title>
+<title>Slay Bags | Luxury</title>
 
 <style>
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+  background: url("https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa") no-repeat center/cover;
+}
+
+/* OVERLAY */
+.overlay {
+  background: rgba(0,0,0,0.85);
+  min-height: 100vh;
   color: #f5f5f5;
 }
 
@@ -22,93 +28,95 @@ body::before {
   opacity: 0.4;
 }
 
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to right, #000, #111);
+  border-bottom: 2px solid gold;
+}
+
+header h1 {
+  color: gold;
+  font-size: 40px;
+}
+
+header input {
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
+  border: none;
+}
+
+header button {
+  padding: 10px;
+  border: none;
+  background: gold;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 /* NAV */
 nav {
-  background: black;
-  padding: 15px;
   text-align: center;
-  border-bottom: 1px solid gold;
+  background: #000;
+  padding: 10px;
 }
 
 nav a {
   color: gold;
-  margin: 15px;
+  margin: 10px;
   text-decoration: none;
-  font-weight: bold;
 }
 
 nav a:hover {
   color: pink;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 50px;
-  background: linear-gradient(to right, #1a1a1a, #000);
-}
-
-header h1 {
-  font-size: 42px;
-  color: gold;
-}
-
-/* SECTION */
-section {
-  padding: 30px 10%;
-  line-height: 1.8;
-}
-
 /* CARDS */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.bag {
+.card {
   background: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  text-align: center;
-  transition: 0.3s;
-  border: 1px solid #333;
-}
-
-.bag:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px pink;
-}
-
-.bag img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-.bag h3 {
-  color: gold;
-}
-
-/* WHY US */
-.why {
-  background: #111;
+  margin: 20px;
   padding: 20px;
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.2);
 }
 
-.why li {
-  margin: 10px 0;
-  padding: 10px;
-  background: #222;
-  border-left: 4px solid pink;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+/* IMAGES */
+.item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+
+/* COLUMNS */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /* TABLE */
 table {
-  width: 80%;
-  margin: 30px auto;
+  width: 100%;
   border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #444;
 }
 
 th {
@@ -116,21 +124,24 @@ th {
   color: gold;
 }
 
-th, td {
-  padding: 12px;
-  border: 1px solid #444;
+tr:hover {
+  background: gold;
+  color: black;
 }
 
-tr:hover {
-  background: pink;
-  color: black;
+/* WHY */
+ul li {
+  margin: 10px 0;
+  background: #222;
+  padding: 10px;
+  border-left: 4px solid gold;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 25px;
   background: black;
+  text-align: center;
+  padding: 20px;
   color: gold;
 }
 </style>
@@ -138,99 +149,130 @@ footer {
 
 <body>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#bags">Collection</a>
-  <a href="#why">Why Us</a>
-  <a href="#prices">Prices</a>
-</nav>
+<div class="overlay">
 
 <header>
   <h1>🌸 Slay Bags 🌸</h1>
-  <p>Luxury Redefined. Confidence Delivered.</p>
+  <input type="text" placeholder="Search luxury bags">
+  <button>Search</button>
 </header>
 
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Gallery</a>
+  <a href="#">Contact</a>
+</nav>
+
 <!-- ABOUT -->
-<section>
-  <h2>Designer Heritage</h2>
+<div class="card">
+  <h2 style="color:gold;">About Our Bags</h2>
+  <p>Designer bags represent luxury, elegance, and timeless identity in fashion.</p>
+  <p>Gucci blends bold creativity with Italian heritage.</p>
+  <p>Hermès and Birkin symbolize exclusivity and craftsmanship.</p>
+  <p>Chanel defines timeless sophistication and elegance.</p>
+  <p>Coach delivers modern luxury for everyday use.</p>
+</div>
 
-  <p>Luxury handbags are timeless symbols of elegance and craftsmanship. They reflect heritage, identity, and artistic excellence developed over decades.</p>
-
-  <p>Gucci blends bold innovation with Italian roots, while Hermès represents exclusivity and handcrafted perfection through its iconic Birkin collection.</p>
-
-  <p>Chanel continues to lead with timeless sophistication, creating pieces that remain relevant across generations.</p>
-
-  <p>Coach offers modern luxury with everyday functionality, appealing to individuals who value both style and practicality.</p>
-
-  <p>Each designer brand tells a story of prestige, making every bag more than just an accessory—it is a statement.</p>
-</section>
-
-<!-- PRODUCTS -->
-<section id="bags">
-  <h2 style="text-align:center;">Our Luxury Collection</h2>
-
-  <div class="container">
-
-    <div class="bag">
-      <img src="https://source.unsplash.com/featured/?gucci,bag">
-      <h3>Gucci</h3>
-    </div>
-
-    <div class="bag">
-      <img src="https://source.unsplash.com/featured/?birkin,bag">
-      <h3>Birkin</h3>
-    </div>
-
-    <div class="bag">
-      <img src="https://source.unsplash.com/featured/?chanel,bag">
-      <h3>Chanel</h3>
-    </div>
-
-    <div class="bag">
-      <img src="https://source.unsplash.com/featured/?hermes,bag">
-      <h3>Hermès</h3>
-    </div>
-
-    <div class="bag">
-      <img src="https://source.unsplash.com/featured/?coach,bag">
-      <h3>Coach</h3>
-    </div>
-
+<!-- LISTS -->
+<div class="card columns">
+  <div>
+    <h3 style="color:gold;">Popular Bags</h3>
+    <ol>
+      <li>Handbags</li>
+      <li>Backpacks</li>
+      <li>Travel Bags</li>
+      <li>Luxury Bags</li>
+    </ol>
   </div>
-</section>
+
+  <div>
+    <h3 style="color:gold;">Features</h3>
+    <ol>
+      <li>Premium Quality</li>
+      <li>Durable Materials</li>
+      <li>Elegant Design</li>
+      <li>Spacious</li>
+    </ol>
+  </div>
+
+  <div>
+    <h3 style="color:gold;">Categories</h3>
+    <ol>
+      <li>Gucci</li>
+      <li>Birkin</li>
+      <li>Chanel</li>
+      <li>Hermès</li>
+      <li>Coach</li>
+    </ol>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="card">
+  <h2 style="color:gold;">Gallery</h2>
+
+  <div class="grid">
+    <div class="item">
+      <img src="https://source.unsplash.com/featured/?gucci,bag">
+      <p>Gucci</p>
+    </div>
+
+    <div class="item">
+      <img src="https://source.unsplash.com/featured/?birkin,bag">
+      <p>Birkin</p>
+    </div>
+
+    <div class="item">
+      <img src="https://source.unsplash.com/featured/?chanel,bag">
+      <p>Chanel</p>
+    </div>
+
+    <div class="item">
+      <img src="https://source.unsplash.com/featured/?hermes,bag">
+      <p>Hermès</p>
+    </div>
+
+    <div class="item">
+      <img src="https://source.unsplash.com/featured/?coach,bag">
+      <p>Coach</p>
+    </div>
+  </div>
+</div>
 
 <!-- WHY US -->
-<section id="why">
-  <h2 style="text-align:center;">Why Choose Slay Bags</h2>
+<div class="card">
+  <h2 style="color:gold;">Why Choose Us</h2>
+  <ul>
+    <li>✔️ Authentic luxury designer bags</li>
+    <li>✔️ Affordable premium pricing</li>
+    <li>✔️ Fast delivery across Kenya</li>
+    <li>✔️ Trusted and reliable service</li>
+    <li>✔️ High-quality craftsmanship</li>
+  </ul>
+</div>
 
-  <div class="why">
-    <ul>
-      <li>✔️ Guaranteed authenticity and premium quality</li>
-      <li>✔️ Exclusive collections not easily available elsewhere</li>
-      <li>✔️ Trusted by customers across Kenya</li>
-      <li>✔️ Fast, secure, and reliable delivery</li>
-      <li>✔️ Affordable access to luxury lifestyle</li>
-    </ul>
-  </div>
-</section>
-
-<!-- PRICES -->
-<h2 id="prices" style="text-align:center;">Price Guide</h2>
-
-<table>
-<tr><th>Brand</th><th>Price (KES)</th></tr>
-<tr><td>Gucci</td><td>95,000</td></tr>
-<tr><td>Birkin</td><td>500,000</td></tr>
-<tr><td>Chanel</td><td>150,000</td></tr>
-<tr><td>Hermès</td><td>200,000</td></tr>
-<tr><td>Coach</td><td>80,000</td></tr>
-</table>
+<!-- TABLE -->
+<div class="card">
+  <h2 style="color:gold;">Price List</h2>
+  <table>
+    <tr><th>Brand</th><th>Price</th></tr>
+    <tr><td>Gucci</td><td>KES 95,000</td></tr>
+    <tr><td>Birkin</td><td>KES 500,000</td></tr>
+    <tr><td>Chanel</td><td>KES 150,000</td></tr>
+    <tr><td>Hermès</td><td>KES 200,000</td></tr>
+    <tr><td>Coach</td><td>KES 80,000</td></tr>
+  </table>
+</div>
 
 <footer>
   <p>📞 +254 712 345 678</p>
   <p>📍 Nairobi, Kenya</p>
-  <p>✨ Elevate Your Style ✨</p>
+  <p>✨ Luxury You Deserve ✨</p>
 </footer>
+
+</div>
 
 </body>
 </html>
+  
